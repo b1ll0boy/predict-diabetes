@@ -10,12 +10,10 @@ try:
         open(model_path, 'rb'))
     scaler = pickle.load(open(scaler_path, 'rb'))
 except Exception as e:
-    st.error(f"Error loading: {e}")
+    st.error(f"Error loading the model: {e}")
     st.stop()
 
 # Function to make predictions
-
-
 def predict_diabetes(inputs):
     # Use the same scaler to scale the input features
     inputs_scaled = scaler.transform([inputs])
