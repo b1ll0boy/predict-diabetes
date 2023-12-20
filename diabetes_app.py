@@ -10,7 +10,7 @@ try:
         open(model_path, 'rb'))
     scaler = pickle.load(open(scaler_path, 'rb'))
 except Exception as e:
-    st.error(f"Error loading the model: {e}")
+    st.error(f"Error loading: {e}")
     st.stop()
 
 # Function to make predictions
