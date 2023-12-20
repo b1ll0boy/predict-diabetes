@@ -5,7 +5,7 @@ import numpy as np
 # Load models
 try:
     diabetes_model = pickle.load(
-        open('D:\Streamlit\project\diabetes_models.sav', 'rb'))
+        open('diabetes_models.sav', 'rb'))
     scaler = pickle.load(open('D:\Streamlit\project\scaler.pkl', 'rb'))
 except Exception as e:
     st.error(f"Error loading the model: {e}")
