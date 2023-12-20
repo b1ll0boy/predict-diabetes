@@ -3,11 +3,11 @@ import pickle
 import numpy as np
 
 # Load models
-model_path = 'diabetes_models.sav'
-scaler_path = 'scaler.pkl'
+# model_path = 'diabetes_models.sav'
+# scaler_path = 'scaler.pkl'
 # try:
-diabetes_model = pickle.load(open(model_path, 'rb'))
-scaler = pickle.load(open(scaler_path, 'rb'))
+diabetes_model = pickle.load(open('D:\Streamlit\project\diabetes_models.sav', 'rb'))
+scaler = pickle.load(open('D:\Streamlit\project\scaler.pkl', 'rb'))
 # except Exception as e:
 #     st.error(f"Error loading the model: {e}")
 #     st.stop()
