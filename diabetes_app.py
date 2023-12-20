@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
+from sklearn.preprocessing import StandardScaler
 
 # Load models
 model_path = 'diabetes_models.sav'
