@@ -4,23 +4,23 @@ import numpy as np
 
 # Load models
 model_path = 'diabetes_models.sav'
-# scaler_path = 'scaler.pkl'
+scaler_path = 'scaler.pkl'
 try:
     diabetes_model = pickle.load(open(model_path, 'rb'))
-    # scaler = pickle.load(open(scaler_path, 'rb'))
+    scaler = pickle.load(open(scaler_path, 'rb'))
 except Exception as e:
     st.error(f"Error loading the model: {e}")
     st.stop()
 
-# Function to make predictions
-# def predict_diabetes(inputs):
-#     # Use the same scaler to scale the input features
-#     inputs_scaled = scaler.transform([inputs])
+Function to make predictions
+def predict_diabetes(inputs):
+    # Use the same scaler to scale the input features
+    inputs_scaled = scaler.transform([inputs])
 
-#     # Make predictions
-#     prediction = diabetes_model.predict(inputs_scaled)
+    # Make predictions
+    prediction = diabetes_model.predict(inputs_scaled)
 
-#     return prediction
+    return prediction
 
 
 st.title('Prediksi Diabetes')
@@ -52,8 +52,7 @@ if st.button('Tes Prediksi Diabetes'):
     st.write("Model weights:", diabetes_model.coef_)  # Debug statement
     st.write("Model intercept:", diabetes_model.intercept_)  # Debug statement
 
-    # prediction = predict_diabetes(inputs)
-    prediction = diabetes_model.predict(inputs)
+    prediction = predict_diabetes(inputs)
 
     st.write("Model prediction:", prediction)  # Debug statement
 
