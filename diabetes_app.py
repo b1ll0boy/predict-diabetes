@@ -12,7 +12,7 @@ except Exception as e:
     st.error(f"Error loading the model: {e}")
     st.stop()
 
-Function to make predictions
+# Function to make predictions
 def predict_diabetes(inputs):
     # Use the same scaler to scale the input features
     inputs_scaled = scaler.transform([inputs])
